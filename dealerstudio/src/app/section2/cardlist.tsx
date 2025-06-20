@@ -35,6 +35,18 @@ export default function CardSection() {
     )
   }
 
+  if (cards.length === 0) {
+    return (
+      <section className="py-20 px-6 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center py-16">
+            <p className="text-gray-600 dark:text-gray-400 text-lg">No data available</p>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section className="py-20 px-6 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto">
@@ -42,7 +54,7 @@ export default function CardSection() {
           {cards.map((card) => (
             <div key={card.id} className="h-full" onClick={() => handleCardSelect(card.id)}>
               <Card isActive={activeCard === card.id} className="h-full">
-                <CardImage src={card.image} alt={card.title} />
+                <CardImage src={card.image} alt={card.title} ctaText={card.ctaText} />
                 <CardHeader>{card.title}</CardHeader>
                 <CardBody>
                   {Array.isArray(card.content) ? (

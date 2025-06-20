@@ -2,30 +2,30 @@
   "cards": [
     {
       "id": 0,
-      "title": "Premium Services",
+      "title": "Heading 1",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-      "buttonText": "Learn More",
+      "buttonText": "Button 1",
       "image": "/brisbane_vgpzva.jpg",
-      "ctaText": "Discover Premium Features"
+      "ctaText": "Card 1"
     },
     {
       "id": 1,
-      "title": "Expert Solutions",
+      "title": "Heading 2",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-      "buttonText": "Get Started",
+      "buttonText": "Button 2",
       "image": "/brisbane_vgpzva.jpg",
-      "ctaText": "Start Your Journey"
+      "ctaText": "Card 2"
     },
     {
       "id": 2,
-      "title": "Advanced Analytics",
+      "title": "Heading 3",
       "content": [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
         "Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"
       ],
-      "buttonText": "View Analytics",
+      "buttonText": "Button 3",
       "image": "/brisbane_vgpzva.jpg",
-      "ctaText": "Explore Data Insights"
+      "ctaText": "Card 3"
     }
   ]
 }
