@@ -3,47 +3,46 @@
 import { useState } from "react"
 import { Card, CardImage, CardHeader, CardBody } from "./cards"
 import Button from "../button"
+import LoadingState from "./loadingstate"
+import ErrorState from "./errorstate"
+import { useCards } from "./usecards"
 
 export default function CardSection() {
+  const { cards, loading, error, refetch } = useCards()
   const [activeCard, setActiveCard] = useState<number>(1)
+
   const handleCardSelect = (cardIndex: number) => {
     setActiveCard(cardIndex)
   }
 
-  const cardData = [
-    {
-      id: 0,
-      title: "Heading 1",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-      buttonText: "Button 1",
-    },
-    {
-      id: 1,
-      title: "Heading 2",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-      buttonText: "Button 2",
-    },
-    {
-      id: 2,
-      title: "Heading 3",
-      content: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
-        "Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-      ],
-      buttonText: "Button 3",
-    },
-  ]
+  if (loading) {
+    return (
+      <section className="py-20 px-6 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+        <div className="max-w-7xl mx-auto">
+          <LoadingState />
+        </div>
+      </section>
+    )
+  }
+
+  if (error) {
+    return (
+      <section className="py-20 px-6 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+        <div className="max-w-7xl mx-auto">
+          <ErrorState message={error} onRetry={refetch} />
+        </div>
+      </section>
+    )
+  }
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-gray-50 to-gray-100">
+    <section className="py-20 px-6 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:max-w-4xl md:mx-auto lg:max-w-none items-stretch">
-          {cardData.map((card) => (
+          {cards.map((card) => (
             <div key={card.id} className="h-full" onClick={() => handleCardSelect(card.id)}>
               <Card isActive={activeCard === card.id} className="h-full">
-                <CardImage src="/brisbane_vgpzva.jpg" alt="City skyline" />
+                <CardImage src={card.image} alt={card.title} />
                 <CardHeader>{card.title}</CardHeader>
                 <CardBody>
                   {Array.isArray(card.content) ? (
@@ -59,6 +58,7 @@ export default function CardSection() {
                   <Button
                     className="w-full shadow-sm hover:shadow-md transition-shadow duration-200"
                     onClick={(e) => {
+                      e?.stopPropagation()
                       handleCardSelect(card.id)
                     }}
                   >
