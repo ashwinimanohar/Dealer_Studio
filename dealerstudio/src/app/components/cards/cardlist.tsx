@@ -50,17 +50,17 @@ export default function CardSection() {
   return (
     <div className="py-20 px-6 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-wrap justify-center gap-8 md:max-w-4xl md:mx-auto lg:max-w-none">
+        <div className="flex flex-wrap justify-center gap-8 md:max-w-4xl md:mx-auto lg:max-w-none items-stretch">
           {cards.map((card) => (
             <div
               key={card.id}
-              className="flex-1 min-w-[300px] max-w-[400px] h-full"
+              className="flex flex-1 min-w-[300px] max-w-[400px]"
               onClick={() => handleCardSelect(card.id)}
             >
-              <Card isActive={activeCard === card.id} className="h-full">
+              <Card isActive={activeCard === card.id} className="w-full flex flex-col">
                 <CardImage src={card.image} alt={card.title} ctaText={card.ctaText} />
                 <CardHeader>{card.title}</CardHeader>
-                <CardBody>
+                <CardBody className="flex-grow">
                   {Array.isArray(card.content) ? (
                     <>
                       <p className="mb-3">{card.content[0]}</p>
@@ -70,7 +70,7 @@ export default function CardSection() {
                     <p>{card.content}</p>
                   )}
                 </CardBody>
-                <div className="px-6 pb-6">
+                <div className="px-6 pb-6 mt-auto">
                   <Button
                     className="w-full shadow-sm hover:shadow-md transition-shadow duration-200"
                     onClick={(e) => {
