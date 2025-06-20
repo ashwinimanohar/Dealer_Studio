@@ -1,0 +1,31 @@
+{
+  "cards": [
+    {
+      "id": 0,
+      "title": "Heading 1",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+      "buttonText": "Button 1",
+      "image": "/brisbane_vgpzva.jpg",
+      "ctaText": "Card 1"
+    },
+    {
+      "id": 1,
+      "title": "Heading 2",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+      "buttonText": "Button 2",
+      "image": "/brisbane_vgpzva.jpg",
+      "ctaText": "Card 2"
+    },
+    {
+      "id": 2,
+      "title": "Heading 3",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
+        "Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"
+      ],
+      "buttonText": "Button 3",
+      "image": "/brisbane_vgpzva.jpg",
+      "ctaText": "Card 3"
+    }
+  ]
+}
