@@ -12,11 +12,11 @@ interface ButtonProps {
 
 export default function Button({ children, variant = "primary", size = "md", className = "", onClick }: ButtonProps) {
   const baseClasses =
-    "font-semibold rounded-full "
+    "font-semibold rounded-full transition-colors duration-200 "
 
   const variantClasses = {
-    primary: "bg-blue-500 hover:bg-blue-600 text-white ",
-    secondary: "bg-gray-200 hover:bg-gray-300 text-gray-800 ",
+    primary: "bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white ",
+    secondary: "bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 ",
   }
 
   const sizeClasses = {
