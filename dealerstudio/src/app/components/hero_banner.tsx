@@ -3,8 +3,8 @@ import Button from "./button"
 
 export default function Hero() {
   return (
-    <div className="bg-white dark:bg-gray-900 transition-colors duration-200">
-      <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+    <div className="bg-white dark:bg-gray-900 transition-colors duration-200 min-h-[400px]">
+      <div className="relative w-full min-h-[400px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
         <Image 
         className="object-cover" 
         src="/ford-ranger_rd5m4t.jpg" 
