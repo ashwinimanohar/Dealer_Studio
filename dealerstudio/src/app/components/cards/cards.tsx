@@ -5,6 +5,7 @@ interface CardProps {
   children: React.ReactNode
   isActive?: boolean
   className?: string
+  "data-testid"?: string
 }
 
 interface CardImageProps {
@@ -24,10 +25,11 @@ interface CardBodyProps {
   className?: string
 }
 
-export function Card({ children, isActive = false, className = "" }: CardProps) {
+export function Card({ children, isActive = false, className = "", "data-testid": dataTestId }: CardProps) {
   return (
     <div
-       className={`bg-white rounded-xl shadow-md overflow-hidden flex flex-col transition-all duration-500 hover:shadow-xl hover:-translate-y-1 cursor-pointer ${
+      data-testid={dataTestId}
+      className={`bg-white rounded-xl shadow-md overflow-hidden flex flex-col transition-all duration-500 hover:shadow-xl hover:-translate-y-1 cursor-pointer ${
         isActive
           ? "ring-4 ring-blue-500 shadow-lg transform scale-[1.02] transition-all duration-500 ease-out"
           : "hover:ring-4 hover:ring-blue-400"
